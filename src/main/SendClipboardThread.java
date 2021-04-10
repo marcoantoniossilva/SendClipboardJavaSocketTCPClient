@@ -25,7 +25,6 @@ public class SendClipboardThread extends Thread {
             while (clientSocket.isConnected()) {
                 try {
                     Thread.sleep(500);
-                    System.out.println(clientSocket.getInetAddress().isReachable(2000));
                     String clientClipboard = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
                     if (!clientClipboard.equals(principal.getLastClipboard())) {
                         principal.setLastClipboard(clientClipboard);
